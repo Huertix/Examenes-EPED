@@ -91,7 +91,7 @@ public class main {
 		System.out.println("----------");
 		System.out.println("----------");
 		
-	*/	
+	
 		BTreeAVL<Integer> avl = new BTreeAVL<Integer>();
 		
 		StackIF<Integer> stack = m.stackGenerator(999999);
@@ -144,7 +144,53 @@ public class main {
 		
 		
 		
+		*/
 		
+		
+		ListIF<Integer> list = m.listGenerator(4);
+		A1 insertAtLast = new A1(list);
+		
+		m.printList(insertAtLast.getList());
+		
+		insertAtLast.insertAtTheEnd(5);
+		
+		insertAtLast.getList();
+		
+		
+		System.out.println("----------");
+		m.printList(insertAtLast.getList());
+		
+		//----------------------------------------------------------------
+		
+		System.out.println("----------\n");
+		System.out.println("Stack");
+		System.out.println("----------");
+		
+		A2 a2 = new A2();
+		StackIF<Integer> stack = m.stackGenerator(5);
+		
+		m.printStack(stack);
+		
+		stack = a2.reverse(stack);
+		System.out.println("----------");
+		m.printStack(stack);
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public void printStack(StackIF<Integer> stack){
+		StackIF<Integer> aux = new StackDynamic<Integer>(stack);
+		
+		while(!aux.isEmpty()){
+			System.out.println(aux.getTop());
+			aux.pop();
+		}
 	}
 	
 	public void printList(ListIF<Integer> list){

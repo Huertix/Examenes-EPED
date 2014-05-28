@@ -78,6 +78,8 @@ public ListIF<T> sort (ComparatorIF<T> comparator);
 
 public ListIF<T> sortMx (ComparatorIF<T> comparator);
 
+public void insertAtTheEnd(T e);
+
 
 
 }

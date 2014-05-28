@@ -152,7 +152,13 @@ public class ListStatic<T> implements ListIF<T>{
         }
         buff.append ("]");
         return buff.toString (); 
-    } 
+    }
+
+	@Override
+	public void insertAtTheEnd(T e) {
+		// TODO Auto-generated method stub
+		
+	} 
 
 
 }
