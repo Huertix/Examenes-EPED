@@ -80,4 +80,6 @@ public interface TreeIF <T>{
     */
     public IteratorIF<T> getIterator (int traversalType);
     
+    public int numLeafs();
+    
 }

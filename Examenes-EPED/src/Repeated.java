@@ -7,7 +7,11 @@ import eped.stack.StackIF;
 
 public class Repeated {
 	
-	
+	/**
+	 * Numero de repeticiones que aparece un nœmero en una lista dada.
+	 * @param input Lista a revisar
+	 * @return devuelve una lista con el nœmero de repeticiones de cada nœmero.
+	 */
 	public ListIF<Integer> repeated(ListIF<Integer> input){
 		
 		ListIF<Integer> newList = new ListDynamic();

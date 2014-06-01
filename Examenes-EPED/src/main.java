@@ -144,7 +144,7 @@ public class main {
 		
 		
 		
-		*/
+		
 		
 		
 		ListIF<Integer> list = m.listGenerator(4);
@@ -174,7 +174,22 @@ public class main {
 		stack = a2.reverse(stack);
 		System.out.println("----------");
 		m.printStack(stack);
+		*/
 		
+		//B1 b1 = new B1();
+		
+		//B2 b2 = new B2();
+		
+		//C1 c1 = new C1();
+		
+		C2 c2 = new C2();
+		
+		m.printList(c2.getList());
+		
+		c2.remove();
+		System.out.println("----------");
+		
+		m.printList(c2.getList());
 		
 		
 		

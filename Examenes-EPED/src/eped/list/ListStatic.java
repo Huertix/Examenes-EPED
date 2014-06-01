@@ -158,6 +158,18 @@ public class ListStatic<T> implements ListIF<T>{
 	public void insertAtTheEnd(T e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean isPalindrome() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void removeRepeated() {
+		// TODO Auto-generated method stub
+		
 	} 
 
 

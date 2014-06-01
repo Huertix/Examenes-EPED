@@ -9,6 +9,7 @@ public class BTreeDynamic<T> implements BTreeIF<T> {
 	private T root;
 	private	BTreeIF<T> left;
 	private BTreeIF<T> right;
+
 	
 	public BTreeDynamic(){
 		this.root = null;
@@ -38,6 +39,7 @@ public class BTreeDynamic<T> implements BTreeIF<T> {
 		return this.root;
 	}
 	
+
 	public BTreeIF <T> getRightChild(){
 		return this.right;
 	}

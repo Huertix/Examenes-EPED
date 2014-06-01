@@ -135,18 +135,29 @@ public class TreeDynamic<T> implements TreeIF<T>{
 
 
 
+	public int numLeafs(){
+		return numLeafs(this);
+	}
+	
+	public int numLeafs(TreeIF<T> tree){
+		
+		int count = 0;
 
-
-    
-
-
-
-
-    
-    
-
-
-    
-    
-
+		if(tree.isLeaf()) return 1;
+		
+		else{
+			ListIF<T> kids = (ListIF<T>) tree.getChildren();
+			
+			while(!kids.isEmpty()){
+				TreeIF<T> newTree =  (TreeIF<T>) kids.getFirst();
+				count = count + numLeafs(newTree);
+				kids = kids.getTail();
+				
+			}
+			
+			return count;
+			
+		}
+	}
+  
 }

@@ -80,6 +80,10 @@ public ListIF<T> sortMx (ComparatorIF<T> comparator);
 
 public void insertAtTheEnd(T e);
 
+public boolean isPalindrome();
+
+public void removeRepeated();
+
 
 
 }

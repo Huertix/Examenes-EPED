@@ -6,6 +6,9 @@ package eped.list;
 
 import eped.ComparatorIF;
 import eped.IteratorIF;
+import eped.stack.StackDynamic;
+import eped.stack.StackIF;
+import eped.tree.TreeIF;
 
 
 /**
@@ -211,6 +214,76 @@ public class ListDynamic<T> implements ListIF<T> {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	@Override
+	public boolean isPalindrome() {
+		
+		return isPalindrome(this);
+	}
+	
+	public boolean isPalindrome(ListIF<T> list){
+		
+		if(list==null) return false;
+		
+		StackIF<T> auxStack = new StackDynamic<T>();
+		
+		ListIF<T> auxList = new ListDynamic<T>(list);
+		
+		IteratorIF<T> it = list.getIterator();
+		
+		while(it.hasNext()){
+			auxStack.push(it.getNext());
+		}
+		
+		boolean middleReached = false;
+		boolean areEquals = true;
+		
+		while(areEquals && !middleReached){
+			areEquals = auxStack.getTop().equals(auxList.getFirst());
+			middleReached = auxList.getLength() < list.getLength()/2;
+			auxStack.pop();
+			auxList = auxList.getTail();
+			
+		}
+		
+		return areEquals;
+		
+		
+		
+
+	}
+	
+	
+	@Override
+	public void removeRepeated(){
+		
+		ListIF<T> list = new ListDynamic<T>(this);
+		ListIF<T> result = removeRepeated(list);
+		
+		this.first = result.getFirst();
+		this.tail = result.getTail();
+				
+	}
+	
+	public ListIF<T> removeRepeated(ListIF<T> list){
+		
+		if(list.getLength()==1) return list;
+		
+		else{
+			T element = list.getFirst();
+			ListIF<T> newList = removeRepeated(list.getTail());
+			
+			if(!newList.contains(element)){
+				newList.insert(element);
+				
+			}
+			
+			return newList;
+		}
+		
+	}
+	
 
    
 }

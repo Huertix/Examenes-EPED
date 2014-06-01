@@ -4,7 +4,8 @@ import eped.ComparatorBase;
 
 public class BTreeSearch<T> extends BTreeDynamic<T> implements BTreeIF<T>{
 	
-	BTreeIF<T> bTree;
+	private BTreeIF<T> bTree;
+	private static int nNodos;
 	
 	Comparator comp = new Comparator();
 	
@@ -35,6 +36,7 @@ public class BTreeSearch<T> extends BTreeDynamic<T> implements BTreeIF<T>{
 			tree.setLeftChild(new BTreeSearch());
 			tree.setRightChild(new BTreeSearch());
 			inserted = true;
+			setnNodos(1);
 		}
 		
 		else if(tree.getRoot().equals(element))
@@ -75,10 +77,12 @@ public class BTreeSearch<T> extends BTreeDynamic<T> implements BTreeIF<T>{
 			
 			else if(tree.getLeftChild()==null || tree.getLeftChild().isEmpty()){
 				//tree = tree.getRightChild();
+				setnNodos(-1);
 				return tree.getRightChild();
 			}
 			
 			else if(tree.getRightChild()==null || tree.getRightChild().isEmpty()){
+				setnNodos(-1);
 				return tree.getLeftChild();
 			}
 			
@@ -107,7 +111,7 @@ public class BTreeSearch<T> extends BTreeDynamic<T> implements BTreeIF<T>{
 	}
 	
 	
-	public BTreeIF<T> finMin(){
+	public BTreeIF<T> findMin(){
 		return findMin(bTree);
 	}
 	
@@ -160,5 +164,14 @@ public class BTreeSearch<T> extends BTreeDynamic<T> implements BTreeIF<T>{
 		}
 		
 	}
+	
+	public void setnNodos(int value){
+		nNodos = nNodos + value;
+	}
+	
+	public int getnNodos(){
+		return nNodos;
+	}
+	
 
 }
