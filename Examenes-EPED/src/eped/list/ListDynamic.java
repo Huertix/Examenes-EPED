@@ -284,6 +284,104 @@ public class ListDynamic<T> implements ListIF<T> {
 		
 	}
 	
+	public int dosRepes(ListIF<T> listOri){
+		
+		ListIF<T> list = new ListDynamic<T>(listOri);
+		
+		int count = 0;
+
+		while(!list.isEmpty()){
+			int repeated = 0;
+			
+			T element = list.getFirst();
+			list = list.getTail();
+			
+			if(element.equals(list.getFirst())){
+				repeated++;
+				
+				if(repeated < 2 && list.getTail().getFirst()!=element ){
+					count++;
+				}
+				
+				else{
+					repeated = 0;
+					list = list.getTail();
+					
+				}
+			}
+			
+			
+		
+		}
+		
+		return count;
+		
+		
+	}
+	
+	
+	public int secIguales(int k){
+		
+		ListIF<T> list = new ListDynamic<T>(this);
+		int total = 0;
+		int count = 0;
+		
+		while(list.getLength() > 0){
+		
+			Integer element = (Integer) list.getFirst();
+			
+			if(k==element)
+				count++;
+			
+			else{
+				if(count>total)
+					total = count;
+				count = 0;
+			}
+			list = list.getTail();
+
+		}
+		
+		return total;
+		
+	}
+	
+	
+	public ListIF<T> noRepes(){
+		
+		StackIF<T> stack = new StackDynamic<T>(this);
+		
+		ListIF<T> newList = new ListDynamic<T>();
+		
+		while(!stack.isEmpty()){
+			newList.insert(stack.getTop());
+			stack.pop();
+		}
+		
+		
+		
+		
+		return noRepes(newList);
+		
+	}
+	
+	public ListIF<T> noRepes(ListIF<T> list){
+		
+		if(list.isEmpty()) return new ListDynamic<T>();
+		
+		T element = list.getFirst();
+		list = noRepes(list.getTail());
+		
+		if(!list.contains(element))
+			list.insert(element);
+		
+		return list;
+		
+	}
+	
+	
+
+		
 
    
 }

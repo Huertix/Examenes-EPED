@@ -123,4 +123,9 @@ public class StackDynamic<T> implements StackIF<T>{
                                     ((next == null) ? 0 : next.hashCode ());
     }
     
+    public boolean contiene(T e, StackIF<T> container){
+		if(container.isEmpty()) return false;
+		return e.equals(container.getTop()) || contiene(e,container.pop());
+	}
+    
 }

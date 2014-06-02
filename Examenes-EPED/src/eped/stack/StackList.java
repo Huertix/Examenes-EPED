@@ -116,5 +116,11 @@ public class StackList <T> implements StackIF<T>{
         return buff.toString ();
     }
 
+	@Override
+	public boolean contiene(T e, StackIF<T> container) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }

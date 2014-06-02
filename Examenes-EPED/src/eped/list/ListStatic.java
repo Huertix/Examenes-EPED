@@ -170,6 +170,24 @@ public class ListStatic<T> implements ListIF<T>{
 	public void removeRepeated() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int dosRepes(ListIF<T> listOri) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int secIguales(int k) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ListIF<T> noRepes() {
+		// TODO Auto-generated method stub
+		return null;
 	} 
 
 

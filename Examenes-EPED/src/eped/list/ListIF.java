@@ -6,6 +6,7 @@ package eped.list;
 
 import eped.ComparatorIF;
 import eped.IteratorIF;
+import eped.stack.StackIF;
 
 /**
  *
@@ -84,6 +85,11 @@ public boolean isPalindrome();
 
 public void removeRepeated();
 
+public int dosRepes(ListIF<T> listOri);
+
+public int secIguales(int k);
+
+public ListIF<T> noRepes();
 
 
 }

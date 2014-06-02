@@ -62,5 +62,7 @@ public interface StackIF<T> {
     */
     public IteratorIF<T> getIterator ();
     
+    public boolean contiene(T e, StackIF<T> container);
+    
 
 }

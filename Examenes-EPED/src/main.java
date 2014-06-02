@@ -192,6 +192,30 @@ public class main {
 		m.printList(c2.getList());
 		
 		
+		System.out.println("----------");
+		D3 d3 = new D3();
+		
+		System.out.println("----------");
+		D4 d4 = new D4();
+		
+		System.out.println(d4.esSuma());
+		
+		E3 e3 = new E3();
+		
+		
+		
+		E4 e4 = new E4();
+		
+		m.printList(e4.getList());
+		
+		e4.remove();
+		System.out.println("----------");
+		
+		m.printList(e4.getList());
+			
+		
+		
+		
 		
 		
 		

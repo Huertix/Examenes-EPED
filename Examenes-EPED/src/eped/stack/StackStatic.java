@@ -121,6 +121,12 @@ public class StackStatic <T> implements StackIF<T>{
         return new StackIterator<T> (handler);
     }
 
+	@Override
+	public boolean contiene(T e, StackIF<T> container) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
     
     
 
